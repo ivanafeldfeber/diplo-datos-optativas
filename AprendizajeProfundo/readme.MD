@@ -50,11 +50,16 @@ Este modelo al principio no aprendía NADA, dandonos un balanced accuracy de 0.0
 Mejor, pero todavía falta.
 
 ### CNN 2
-Luego de investigar un poco más nos dimos cuenta que el trabajo sobre los datos de IMDb tiene clases binarias, mientras que el dataset de Meli tiene como 600 clases, por lo tanto íbamos a necesitar una arquitectura un poco más compleja para que pueda aprender mejor de nuestros datos. 
+Luego de investigar un poco más nos dimos cuenta que el trabajo sobre los datos de IMDb tiene clases binarias, mientras que el dataset de Meli tiene como 600 clases, por lo tanto íbamos a necesitar una arquitectura un poco más compleja para que pueda aprender mejor de nuestros datos. Agregamos capas ocultas y dropout en 0.3 y obtuvimos mejores resultados, entrenando al modelo por 10 épocas.  
+
+![image](https://user-images.githubusercontent.com/8229279/144724764-ab75d8ba-6f25-47de-99a8-729d0a7bb6f1.png)
+![image](https://user-images.githubusercontent.com/8229279/144724770-d4212676-2cce-4874-80ee-6114a70fb660.png)
+![image](https://user-images.githubusercontent.com/8229279/144724877-0c5c6883-5ef5-49c6-9bde-06ce81c93b4e.png)
 
 
 
-
-
+### Conclusiones y próximos pasos:
+- Es fundamental seguir mejorando nuestros modelos, creemos que tal vez con más épocas conseguiremos mejores resultados, sobre todo en la última Red Convolucional, que vemos que sigue subiendo la curva. Tal vez al final del día podamos subir mejores métricas, pero los deadlines son tiranos.
+- Nos quedamos con ganas de seguir investigando otras arquitecturas y formas de entrenar estos modelos, queremos probar hacero fuera de Nabu2 así podemos replicarlo aunque no tengamos más acceso al servidor.
 
 
