@@ -17,6 +17,7 @@ A pesar de estos pequeños detalles con respecto a nuestras formaciones, elegimo
 
 ![alt text](https://i.imgflip.com/5wn3wz.jpg) 
 
+### MLP
 Luego de un video muy explicativo de Cristian sobre cómo encolar trabajos comprenidmos la lógica detrás de Nabu2 y Jupyter Lab. Nos pusimos a armar y entrenar varios modelos, comenzando por el **Multi Layer Perceptron** que nos dieron como baseline desde la materia. Spoiler alert: ningún modelo nos dio muy bien, no hubiesemos ganado el Meli Challenge ni de casualidad.
 
 Las métricas del MLP (que puede encontrarse en ```experiment/mlp.py```) fueron las siguientes:
@@ -25,15 +26,20 @@ Las métricas del MLP (que puede encontrarse en ```experiment/mlp.py```) fueron 
 
 Como podemos ver en el gráfico la loss de entrenamiento y validación no dió muy bien, pero lo que vino después fue peor.
 
+### MLP con hiperparámetros 
 Intentamos tocar algunos hiperparámetros del Perceptron:
+```
 - learning rate =1e-4
 - weight decay = 1e-4
 - batch size = 1024
+```
 
 Y aprendió menos y peor:
 ![image](https://user-images.githubusercontent.com/8229279/144724582-9c8dbdc5-7ef2-42e3-b783-cbac902f7081.png)
 ![image](https://user-images.githubusercontent.com/8229279/144724589-29cfb03b-4925-4149-a6ce-90646efc9a1f.png)
 
+
+### CNN 1
 Decidimos que necesitábamos darle un descanso al MLP por lo tanto probamos con una red neuronal convolucional (CNN) utilizando de base todo el código del Perceptrón y cambiando su arquitectura por una arquitectura de CNN sencilla que nos dieron en la materia para poder trabajar embeddings de análisis de sentimiento en IMDb.
 
 Este modelo al principio no aprendía NADA, dandonos un balanced accuracy de 0.002. A partir de retocar hiperparámetros mejoró: empezamos con un learning rate muy alto 0.1 y finalmente funcionó mucho mejor con uno de 0.0005 y entrenando por 8 épocas en vez de 4 como veníamos haciendo. Su clase puede encontrarse en ```experiment/cnn1.py``` y su versión final tuvo las siguientes métricas:
@@ -43,7 +49,10 @@ Este modelo al principio no aprendía NADA, dandonos un balanced accuracy de 0.0
 
 Mejor, pero todavía falta.
 
+### CNN 2
 Luego de investigar un poco más nos dimos cuenta que el trabajo sobre los datos de IMDb tiene clases binarias, mientras que el dataset de Meli tiene como 600 clases, por lo tanto íbamos a necesitar una arquitectura un poco más compleja para que pueda aprender mejor de nuestros datos. 
+
+
 
 
 
