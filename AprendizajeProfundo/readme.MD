@@ -26,10 +26,10 @@ Las métricas del MLP (que puede encontrarse en ```experiment/mlp.py```) fueron 
 ![image](https://user-images.githubusercontent.com/8229279/144725030-ac834f05-347b-463c-95df-c5dc35144f4b.png)
 
 
-Como podemos ver en el gráfico la loss de entrenamiento y validación no dió muy bien, pero lo que vino después fue peor.
+Como podemos ver en el gráfico la loss de entrenamiento y validación no dió muy bien, aunque vemos que la balanced accuracy sigue creciendo, tal vez entrenarlo solo por 3 épocas no alcanzó.
 
 ### MLP con hiperparámetros 
-Intentamos tocar algunos hiperparámetros del Perceptron:
+Intentamos tocar algunos hiperparámetros del Perceptron, durante 10 épocas:
 ```
 - learning rate =1e-4
 - weight decay = 1e-4
@@ -41,7 +41,7 @@ Y aprendió menos y peor:
 ![image](https://user-images.githubusercontent.com/8229279/144724589-29cfb03b-4925-4149-a6ce-90646efc9a1f.png)
 ![image](https://user-images.githubusercontent.com/8229279/144725037-6e082e0e-98e3-48f6-ba73-2ee6685b1e51.png)
 
-
+Si bien la curva de BACC nos demuestra que está aprendiendo, lo hace muy lentamente y no son valores significativos.
 
 ### CNN 1
 Decidimos que necesitábamos darle un descanso al MLP por lo tanto probamos con una red neuronal convolucional (CNN) utilizando de base todo el código del Perceptrón y cambiando su arquitectura por una arquitectura de CNN sencilla que nos dieron en la materia para poder trabajar embeddings de análisis de sentimiento en IMDb.
