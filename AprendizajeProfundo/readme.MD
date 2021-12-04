@@ -23,6 +23,8 @@ Luego de un video muy explicativo de Cristian sobre cómo encolar trabajos compr
 Las métricas del MLP (que puede encontrarse en ```experiment/mlp.py```) fueron las siguientes:
 ![alt text](https://github.com/ivanafeldfeber/diplo-datos-optativas/blob/main/AprendizajeProfundo/images/MLP.png?raw=true)
 ![alt text](https://github.com/ivanafeldfeber/diplo-datos-optativas/blob/main/AprendizajeProfundo/images/MLP%20graph.png?raw=true)
+![image](https://user-images.githubusercontent.com/8229279/144725030-ac834f05-347b-463c-95df-c5dc35144f4b.png)
+
 
 Como podemos ver en el gráfico la loss de entrenamiento y validación no dió muy bien, pero lo que vino después fue peor.
 
@@ -37,6 +39,8 @@ Intentamos tocar algunos hiperparámetros del Perceptron:
 Y aprendió menos y peor:
 ![image](https://user-images.githubusercontent.com/8229279/144724582-9c8dbdc5-7ef2-42e3-b783-cbac902f7081.png)
 ![image](https://user-images.githubusercontent.com/8229279/144724589-29cfb03b-4925-4149-a6ce-90646efc9a1f.png)
+![image](https://user-images.githubusercontent.com/8229279/144725037-6e082e0e-98e3-48f6-ba73-2ee6685b1e51.png)
+
 
 
 ### CNN 1
@@ -46,10 +50,15 @@ Este modelo al principio no aprendía NADA, dandonos un balanced accuracy de 0.0
 
 ![image](https://user-images.githubusercontent.com/8229279/144724616-9846f478-f904-48c5-ac32-573a3466f63c.png)
 ![image](https://user-images.githubusercontent.com/8229279/144724620-f563762d-290e-495b-aca9-62073616cc7b.png)
+![image](https://user-images.githubusercontent.com/8229279/144724988-357da59e-a0c6-44e9-8057-602a4cdc3e7b.png)
 
-Mejor, pero todavía falta.
+
+Mejor, pero todavía falta. Y no es un tema de épocas porque vemos al final como comienza a aplanarse la curva, ya no está mejorando su performance.
 
 ### CNN 2
+Probamos con mismos hiperparámetros pero con otro optimizador, SGD, no con Adam pero directamente la red no aprendió nada. Investigamos el BCELoss, pero vimos que funciona mejor en clases binarias, entonces lo descartamos.
+
+### CNN 3
 Luego de investigar un poco más nos dimos cuenta que el trabajo sobre los datos de IMDb tiene clases binarias, mientras que el dataset de Meli tiene como 600 clases, por lo tanto íbamos a necesitar una arquitectura un poco más compleja para que pueda aprender mejor de nuestros datos. Agregamos capas ocultas y dropout en 0.3 y obtuvimos mejores resultados, entrenando al modelo por 10 épocas.  
 
 ![image](https://user-images.githubusercontent.com/8229279/144724764-ab75d8ba-6f25-47de-99a8-729d0a7bb6f1.png)
