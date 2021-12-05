@@ -70,6 +70,7 @@ Luego de investigar un poco más nos dimos cuenta que el trabajo sobre los datos
 ### Conclusiones, información y próximos pasos:
 - En el archivo ```run.sh``` están los diferentes modelos que fuimos corriendo con diferentes hiperparámetros en cada modelo, lo hicimos de este modo, generando nuevos argumentos para que los archivos .py queden lo más "generales" posibles y que a la hora de ejecutar podamos elegir qué hiperparámetros usar.
 - Es fundamental seguir mejorando nuestros modelos, creemos que tal vez con más épocas conseguiremos mejores resultados, sobre todo en la última Red Convolucional, que vemos que sigue subiendo la curva. Tal vez al final del día podamos subir mejores métricas, pero los deadlines son tiranos.
-- Nos quedamos con ganas de seguir investigando otras arquitecturas y formas de entrenar estos modelos, queremos probar hacero fuera de Nabu2 así podemos replicarlo aunque no tengamos más acceso al servidor.
+- Nos quedamos con ganas de seguir investigando otras arquitecturas y formas de entrenar estos modelos
+- Queremos probar cómo sería implementar estos modelos fuera de Nabu2 así podemos replicarlos cuando no tengamos más acceso al servidor.
 
 
