@@ -20,7 +20,8 @@ logging.basicConfig(
     format="%(asctime)s: %(levelname)s - %(message)s",
     level=logging.INFO
 )
-
+# Para crear este modelo tomamos la clase MLPClassifier elaborada en la materia y cambiamos su nombre, también la estructura de la red.
+# Para la estructura de la red tomamos de base la utilizada en el IMDb classifier
 class CNNClassifier(nn.Module):
     def __init__(self, 
                  pretrained_embeddings_path, 
@@ -105,8 +106,10 @@ if __name__ == "__main__":
                         help="Number of epochs",
                         default=3,
                         type=int)
+    # Agregamos estos argumentos para poder pasarselos a run.sh directamente y no tener que estar modificando este archivo
+    
     parser.add_argument("--learning_rate",
-                        help="learning rate",
+                        help="learning rate", 
                         default=0.1,
                         type=float)
     parser.add_argument("--batch_size",
