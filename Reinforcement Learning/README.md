@@ -2,6 +2,6 @@
 
 Equipo de trabajo
 - [Susana Araujo](github.com/suaraujo)
-- Ezequiel Kinigsberg
+- [Ezequiel Kinigsberg](github.com/ezekini)
 - [Tamara Maggioni](github.com/tamaramaggioni)
 - [Ivana Feldfeber](github.com/ivanafeldfeber)
